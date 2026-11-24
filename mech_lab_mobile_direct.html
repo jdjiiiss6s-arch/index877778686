@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<title>ميكانيك | هندسة تقنيات الميكانيك</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#07111f;--panel:#0d1b2d;--line:rgba(148,190,230,.16);--text:#edf6ff;--muted:#9db0c5;--cyan:#36d6f5;--blue:#4b82ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth;width:100%;overflow-x:hidden}img,svg{max-width:100%}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#12365a 0,transparent 34%),var(--bg);color:var(--text);font-family:'Cairo',Tahoma,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:linear-gradient(rgba(130,180,220,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(130,180,220,.13) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:2}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:19px}.brand-icon{width:43px;height:43px;border:1px solid #43d7f5;border-radius:13px;display:grid;place-items:center;color:var(--cyan);font-size:24px;box-shadow:0 0 25px #1bc8ef30}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;color:var(--muted);font-size:14px}nav ul a:hover{color:var(--cyan)}
+.hero{min-height:620px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:30px;padding:65px 0 85px;position:relative}
+.tag{display:inline-flex;align-items:center;gap:9px;border:1px solid #39c9ed55;background:#0b2940;border-radius:30px;padding:7px 15px;color:#8ceaff;font-size:12px}
+h1{font-size:clamp(38px,5vw,66px);line-height:1.35;margin:22px 0 15px;font-weight:900;letter-spacing:-1px}h1 span{background:linear-gradient(90deg,#40dcf6,#6b8cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:16px;line-height:2.1;max-width:570px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn{padding:13px 22px;border-radius:12px;font-weight:800;font-size:14px;display:inline-flex;align-items:center;gap:9px;transition:.25s;border:1px solid var(--line)}.btn.primary{background:linear-gradient(110deg,#16bcd9,#477bff);color:#03111e;box-shadow:0 10px 35px #168bc64a}.btn:hover{transform:translateY(-4px);filter:brightness(1.12)}.btn.ghost{background:#ffffff08}
+.visual{height:420px;display:grid;place-items:center;perspective:900px;position:relative}
+.orbit{position:absolute;width:350px;height:350px;border:1px solid #3bcff54c;border-radius:50%;transform:rotateX(68deg) rotateZ(-18deg);animation:orbit 16s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px dashed #477dff66;border-radius:50%;inset:25px;transform:rotateY(55deg)}.orbit:after{inset:-35px;transform:rotateY(-55deg)}
+.gear{width:210px;height:210px;position:relative;display:grid;place-items:center;transform-style:preserve-3d;animation:float 5s ease-in-out infinite}
+.gear svg{width:100%;height:100%;filter:drop-shadow(0 20px 30px #0ac9ed40);animation:spin 24s linear infinite}
+.gear:before{content:"";position:absolute;width:86px;height:86px;border:12px solid #061423;border-radius:50%;background:linear-gradient(135deg,#173d5a,#07111f);box-shadow:0 0 0 5px #4cdaf0;z-index:1}
+.spark{position:absolute;width:8px;height:8px;border-radius:50%;background:#70eaff;box-shadow:0 0 20px #70eaff;animation:pulse 2s infinite}.s1{top:65px;right:55px}.s2{bottom:75px;left:45px;animation-delay:.7s}.s3{top:125px;left:20px;animation-delay:1.2s}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes orbit{to{transform:rotateX(68deg) rotateZ(342deg)}}@keyframes float{50%{transform:translateY(-14px) rotateY(10deg)}}@keyframes pulse{50%{opacity:.25;transform:scale(.5)}}
+section{padding:75px 0;position:relative}.section-head{text-align:center;margin-bottom:35px}.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:2px}.section-head h2{font-size:32px;margin:8px 0}.section-head p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,#11243a,#0a1727);border:1px solid var(--line);border-radius:19px;padding:25px;position:relative;overflow:hidden;transition:.3s}.card:hover{transform:translateY(-7px);border-color:#3ccdec88;box-shadow:0 20px 50px #0005}.card:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:#28c9ee0b;left:-35px;bottom:-55px}.icon{width:49px;height:49px;border-radius:14px;background:#12354c;color:var(--cyan);display:grid;place-items:center;font-size:23px;margin-bottom:16px}.card h3{margin:0 0 8px;font-size:18px}.card p{color:var(--muted);font-size:13px;line-height:1.9;margin:0 0 19px}.download{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:16px;border-top:1px solid var(--line)}.download small{color:#8fa7bd;font-size:11px}.download a{background:#123c55;color:#83eaff;border:1px solid #2cc7e755;border-radius:9px;padding:8px 13px;font-size:12px;font-weight:800;white-space:nowrap}.download a:hover{background:#176184}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}.feature-box{background:linear-gradient(145deg,#10263c,#0b1726);border:1px solid var(--line);border-radius:22px;padding:30px}.feature-box h3{font-size:23px;margin:0 0 12px}.feature-box p{color:var(--muted);line-height:2;font-size:14px}.list{display:grid;gap:12px}.list div{display:flex;gap:12px;align-items:center;color:#c8d8e8;font-size:14px}.check{color:var(--cyan);font-size:19px}
+.notice{border:1px solid #e6b64b44;background:#e6b64b0c;border-radius:13px;padding:14px 17px;color:#d7c69c;font-size:12px;line-height:1.9;margin-top:18px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:800px){nav ul{gap:12px;font-size:12px}.hero{grid-template-columns:1fr;padding-top:55px;text-align:center}.lead{margin:auto}.actions{justify-content:center}.visual{height:330px}.orbit{width:280px;height:280px}.gear{width:170px;height:170px}.cards{grid-template-columns:1fr 1fr}.feature{grid-template-columns:1fr}}
+@media(max-width:520px){
+ nav{height:auto;padding:14px 0;align-items:stretch;gap:13px;flex-direction:column}
+ .brand{font-size:18px}
+ nav ul{width:100%;justify-content:space-between;gap:7px;font-size:11px;flex-wrap:wrap}
+ nav ul a{display:block;padding:7px 2px}
+ .cards{grid-template-columns:1fr;gap:14px}
+ .hero{padding:42px 0 35px;gap:4px}
+ section{padding:48px 0}
+ h1{font-size:clamp(35px,10vw,43px);line-height:1.3}
+ .lead{font-size:14px;line-height:2}
+ .actions{display:grid;grid-template-columns:1fr;gap:10px}
+ .btn{justify-content:center;min-height:48px}
+ .visual{height:260px;overflow:hidden}
+ .orbit{width:235px;height:235px}
+ .gear{width:145px;height:145px}
+ .section-head h2{font-size:27px}
+ .card{padding:21px}
+ .download{align-items:center}
+ .download a{padding:10px 12px}
+ .feature-box{padding:22px}
+ .foot{justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="#"><span class="brand-icon">⚙</span><span>MECH<span style="color:var(--cyan)">.LAB</span></span></a>
+  <ul><li><a href="#home">الرئيسية</a></li><li><a href="#materials">الملازم</a></li><li><a href="#software">البرامج</a></li><li><a href="#about">عن المنصة</a></li></ul>
+</nav>
+<main id="home" class="hero">
+ <div>
+  <span class="tag">✦ منصة تعليمية لطلبة المرحلة الأولى</span>
+  <h1>هندسة تقنيات<br><span>الميكانيك</span></h1>
+  <p class="lead">مساحتك الهندسية للتعلّم والتطوّر. ملازم ومحاضرات مرتبة، وبرامج هندسية تحتاجها من أول خطوة في رحلتك الجامعية.</p>
+  <div class="actions"><a class="btn primary" href="#materials">استكشف الملازم <span>←</span></a><a class="btn ghost" href="#software">برامج هندسية</a></div>
+ </div>
+ <div class="visual" aria-label="رسم متحرك لترس ميكانيكي ثلاثي الأبعاد">
+  <div class="orbit"></div><div class="gear">
+   <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5ce8f5"/><stop offset="1" stop-color="#426fff"/></linearGradient></defs><path fill="url(#g)" fill-rule="evenodd" d="M86 4h28l5 17 13 5 14-10 20 20-10 14 5 13 17 5v28l-17 5-5 13 10 14-20 20-14-10-13 5-5 17H86l-5-17-13-5-14 10-20-20 10-14-5-13-17-5V68l17-5 5-13-10-14 20-20 14 10 13-5z M100 57a43 43 0 1 0 0 86a43 43 0 0 0 0-86z"/></svg>
+  </div><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i>
+ </div>
+</main>
+
+<section id="materials">
+ <div class="section-head"><div class="eyebrow">STUDY LIBRARY</div><h2>مكتبة الملازم</h2><p>المحاضرات المتوفرة حالياً — اضغط لتحميل الملف.</p></div>
+ <div class="cards">
+  <article class="card"><div class="icon">📘</div><h3>اللغة العربية</h3><p>محاضرات اللغة العربية للصف الأول — ملف PDF للمراجعة والدراسة.</p><div class="download"><small>PDF · محاضرات</small><a href="https://www.mediafire.com/file/k7crh2r1jkm6gnq/%25D9%2585%25D8%25AD%25D8%25A7%25D8%25B6%25D8%25B1%25D8%25A7%25D8%25AA_%25D9%2581%25D9%258A_%25D8%25A7%25D9%2584%25D9%2584%25D8%25BA%25D8%25A9_%25D8%25A7%25D9%2584%25D8%25B9%25D8%25B1%25D8%25A8%25D9%258A%25D8%25A9_%25D9%2584%25D9%2584%25D8%25B5%25D9%2581_%25D8%25A7%25D9%2584%25D8%25A3%25D9%2588%25D9%2584_.pdf/file?download=1" target="_blank" rel="noopener">تحميل الملزمة ↓</a></div></article>
+  <article class="card"><div class="icon">📐</div><h3>ميكانيك هندسي</h3><p>المحاضرة الأولى في مادة الميكانيك الهندسي — ملف PDF.</p><div class="download"><small>PDF · محاضرة 01</small><a href="https://www.mediafire.com/file/4e47r6h53pzc28a/%25D8%25A7%25D9%2584%25D9%2585%25D8%25AD%25D8%25A7%25D8%25B6%25D8%25B1%25D8%25A9_%25D8%25A7%25D9%2584%25D8%25A7%25D9%2588%25D9%2584%25D9%2589_%25D9%2585%25D9%258A%25D9%2583%25D8%25A7%25D9%2586%25D9%258A%25D9%2583_%25D9%2587%25D9%2586%25D8%25AF%25D8%25B3%25D9%258A.pdf/file?download=1" target="_blank" rel="noopener">تحميل الملزمة ↓</a></div></article>
+  <article class="card"><div class="icon">＋</div><h3>ملزمة جديدة قريباً</h3><p>هذه المساحة مخصصة لإضافة المحاضرات القادمة وتنظيمها حسب المواد.</p><div class="download"><small>قريباً · PDF</small><a href="mailto:">تُضاف لاحقاً</a></div></article>
+ </div>
+</section>
+
+<section id="software">
+ <div class="section-head"><div class="eyebrow">ENGINEERING TOOLS</div><h2>البرامج الهندسية</h2><p>ابدأ بتجهيز أدواتك الهندسية الأساسية.</p></div>
+ <div class="feature">
+  <div class="feature-box"><div class="icon">▦</div><h3>AutoCAD 2021</h3><p>برنامج للرسم والتصميم الهندسي ثنائي الأبعاد وثلاثي الأبعاد، ويساعدك على تعلّم المخططات والرسومات الهندسية.</p><a class="btn primary" href="https://trial2.autodesk.com/NetSWDLD/2021/ACD/80A03A2D-8FA9-43FD-9B26-1604CAD1D9CF/SFX/AutoCAD_2021_English_Win_64bit_dlm.sfx.exe" target="_blank" rel="noopener">تحميل ملف التثبيت ↓</a>
+   <div class="notice">رابط التثبيت المضاف من Autodesk. تحقّق من متطلبات النظام والترخيص وشروط الاستخدام، واستخدم البرنامج بترخيص قانوني. قد يتطلب التثبيت تسجيل الدخول إلى حساب Autodesk.</div>
+  </div>
+  <div class="feature-box"><h3>شنو راح تحصل هنا؟</h3><p>منصة بسيطة تجمع احتياجات طالب هندسة تقنيات الميكانيك بمكان واحد، وتتوسع تدريجياً مع تقدم المواد الدراسية.</p>
+   <div class="list"><div><span class="check">✓</span> مكتبة ملازم ومحاضرات PDF</div><div><span class="check">✓</span> روابط البرامج الهندسية</div><div><span class="check">✓</span> تنظيم المحتوى حسب المادة</div><div><span class="check">✓</span> مساحة لإضافة شروحات وملاحظات لاحقاً</div></div>
+  </div>
+ </div>
+</section>
+<section id="about">
+ <div class="section-head"><div class="eyebrow">ABOUT MECH.LAB</div><h2>من الطالب إلى المهندس</h2><p>تعلّم اليوم، وصمّم حلول الغد.</p></div>
+ <div class="feature-box" style="text-align:center;max-width:760px;margin:auto"><p style="font-size:15px">MECH.LAB منصة طلابية مستقلة لمشاركة المصادر التعليمية والروابط المفيدة لطلبة هندسة تقنيات الميكانيك. المحتوى قابل للتحديث والإضافة مع كل محاضرة جديدة.</p></div>
+</section>
+<footer><div class="foot"><span>© 2026 MECH.LAB — جميع الحقوق محفوظة</span><span>تمت البرمجة بواسطة قاسم عباس</span></div></footer>
+</div>
+</body>
+</html>
